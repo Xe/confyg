@@ -1,1 +1,1 @@
-module within.website/confyg/v1
+module within.website/confyg
