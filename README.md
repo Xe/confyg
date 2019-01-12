@@ -67,4 +67,40 @@ func (s *server) Read(errs *bytes.Buffer, fs *confyg.FileSyntax, line *confyg.Li
 		s.keys = kp
 	}
 }
+
+var (
+	configFile = flag.String("cfg", "./apig.cfg", "apig config file location")
+)
+
+func main() {
+	flag.Parse()
+
+	data, err := ioutil.ReadFile(*configFile)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	s := &server{}
+	_, err = confyg.Parse(*configFile, data, s, s)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_ = s
+}
 ```
+
+Or use [`flagconfyg`](https://godoc.org/within.website/confyg/flagconfyg):
+
+```go
+var (
+  config = flag.Config("cfg", "", "if set, configuration file to load (see https://github.com/Xe/x/blob/master/docs/man/flagconfyg.5)")
+)
+
+func main() {
+  flag.Parse()
+  
+  if *config != "" {
+    flagconfyg.CmdParse(*config)
+  }
+}
