@@ -1,6 +1,8 @@
 # confyg
 
-A suitably generic form of the Go module configuration file parser
+A suitably generic form of the Go module configuration file parser.
+
+[![GoDoc](https://godoc.org/within.website/confyg?status.svg)](https://godoc.org/within.website/confyg)
 
 Usage is simple:
 
