@@ -9,7 +9,7 @@ import (
 	"log"
 	"strings"
 
-	"within.website/confyg"
+	"within.website/v0/confyg"
 )
 
 // CmdParse is a quick wrapper for command usage. It explodes on errors.
