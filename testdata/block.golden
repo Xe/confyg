@@ -1,24 +1,24 @@
-// comment
+## comment
 x "y" z
 
-// block
-block ( // block-eol
-	// x-before-line
+## block
+block ( ## block-eol
+	## x-before-line
 
-	"x" ( y // x-eol
+	"x" ( y ## x-eol
 	"x1"
 	"x2"
-	// line
+	## line
 	"x3"
 	"x4"
 
 	"x5"
 
-	// y-line
-	"y" //  y-eol
+	## y-line
+	"y" ##  y-eol
 
-	"z" // z-eol
-) // block-eol2
+	"z" ## z-eol
+) ## block-eol2
 
 block2 (
 	x
@@ -26,4 +26,4 @@ block2 (
 	z
 )
 
-// eof
+## eof

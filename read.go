@@ -302,7 +302,7 @@ func (in *input) lex(sym *symType) int {
 		}
 
 		// Comment runs to end of line.
-		if c == '/' {
+		if c == '#' {
 			in.startToken(sym)
 
 			// Is this comment the only thing on its line?
@@ -312,10 +312,7 @@ func (in *input) lex(sym *symType) int {
 			suffix := len(bytes.TrimSpace(in.complete[i+1:in.pos.Byte])) > 0
 			in.readRune()
 			c = in.peekRune()
-			if c == '*' {
-				in.Error(fmt.Sprintf("mod files must use // comments (not /* */ comments)"))
-			}
-			if c != '/' {
+			if c != '#' {
 				in.Error(fmt.Sprintf("unexpected input character %#q", c))
 			}
 
