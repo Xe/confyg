@@ -411,7 +411,7 @@ func (in *input) lex(sym *symType) int {
 // isIdent reports whether c is an identifier rune.
 // We treat nearly all runes as identifier runes.
 func isIdent(c int) bool {
-	return c != 0 && !unicode.IsSpace(rune(c)) && c != '/' && c != '(' && c != ')' && c != '"' && c != '`'
+	return c != 0 && !unicode.IsSpace(rune(c)) && c != '(' && c != ')' && c != '"' && c != '`'
 }
 
 // Comment assignment.
